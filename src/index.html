@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+        <link rel="manifest" href="assets/site.webmanifest">
+        <title>To-Do</title>
+        <link rel="stylesheet" href="bulma.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,0,0&icon_names=delete,playlist_add" />
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="checkbox.css">
+    </head>
+    <body onload="initTodo();" class="mt-2">
+
+        <nav class="level mr-5">
+            <div class="tabs is-boxed is-flex-grow-1">
+                <ul id="listTabs" class="pl-4">
+                    <li id="tabNewList"><a href="#" onclick="btnNewList();"><span class="material-symbols-outlined">playlist_add</span></a></li>
+                </ul>
+            </div>
+            <div class="level-right">
+                <button class="js-modal-trigger" data-target="creditsModal" onclick="btnShowCredits();">Credits</button>
+            </div>
+        </nav>
+
+        <div id="listDiv">
+        <!--
+            <div class="list is-flex is-flex-direction-column invisible" id="list-1">
+                <div class="listTitle is-flex is-flex-direction-row is-justify-content-center mx-3">
+                    <input type="text" class="listTitleInput input is-large is-primary" value="List 1">
+                </div>
+                <div class="listItems">
+                    <div class="listItem is-flex is-flex-direction-row is-justify-content-center is-align-items-center my-2">
+                        <label class="neon-checkbox">
+                            <input type="checkbox" onchange="checkChanged(this)"/>
+                            <div class="neon-checkbox__frame">
+                                <div class="neon-checkbox__box">
+                                    <div class="neon-checkbox__check-container">
+                                    <svg viewBox="0 0 24 24" class="neon-checkbox__check">
+                                        <path d="M3,12.5l7,7L21,5"></path>
+                                    </svg>
+                                    </div>
+                                    <div class="neon-checkbox__glow"></div>
+                                    <div class="neon-checkbox__borders">
+                                    <span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="neon-checkbox__effects">
+                                    <div class="neon-checkbox__particles">
+                                    <span></span><span></span><span></span><span></span> <span></span
+                                    ><span></span><span></span><span></span> <span></span><span></span
+                                    ><span></span><span></span>
+                                    </div>
+                                    <div class="neon-checkbox__rings">
+                                    <div class="ring"></div>
+                                    <div class="ring"></div>
+                                    <div class="ring"></div>
+                                    </div>
+                                    <div class="neon-checkbox__sparks">
+                                    <span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+  
+                        <input type="text" class="input mx-3 listItemInput" value="Item 1">
+                        <button onclick="btnDeleteItem(this);" class="button btnItemDelete"><span class="material-symbols-outlined">delete</span></button>
+                    </div>
+                    <div class="listItem is-flex is-flex-direction-row is-justify-content-center is-align-items-center my-2">
+                        <label class="neon-checkbox">
+                            <input type="checkbox" checked onchange="checkChanged(this)" />
+                            <div class="neon-checkbox__frame">
+                                <div class="neon-checkbox__box">
+                                    <div class="neon-checkbox__check-container">
+                                    <svg viewBox="0 0 24 24" class="neon-checkbox__check">
+                                        <path d="M3,12.5l7,7L21,5"></path>
+                                    </svg>
+                                    </div>
+                                    <div class="neon-checkbox__glow"></div>
+                                    <div class="neon-checkbox__borders">
+                                    <span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="neon-checkbox__effects">
+                                    <div class="neon-checkbox__particles">
+                                    <span></span><span></span><span></span><span></span> <span></span
+                                    ><span></span><span></span><span></span> <span></span><span></span
+                                    ><span></span><span></span>
+                                    </div>
+                                    <div class="neon-checkbox__rings">
+                                    <div class="ring"></div>
+                                    <div class="ring"></div>
+                                    <div class="ring"></div>
+                                    </div>
+                                    <div class="neon-checkbox__sparks">
+                                    <span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="text" class="input listItemInput is-success mx-3" value="Item 2">
+                        <button onclick="btnDeleteItem(this);" class="button btnItemDelete"><span class="material-symbols-outlined">delete</span></button>
+                    </div>
+                </div>
+                <div class="listFooter is-flex is-flex-direction-row is-justify-content-center">
+                    <button class="button is-success is-dark mr-3 btnNewItem" onclick="btnCreateItem(this);">New Item</button>
+                    <button class="button is-danger is-dark ml-3 btnListDelete" onclick="btnDeleteList(this);" onmouseleave="btnDeleteLeave(this);">Delete List</button>
+                </div>
+            </div>
+        -->
+
+        </div>
+        
+        <div id="creditsModal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Credits</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="content">
+                        <h3>Sounds</h3>
+                        <p>Apple</p>
+                        <p>ZapSplat</p>
+                        <h3>Style</h3>
+                        <p>Bulma (General CSS)</p>
+                        <p>00Kubi from Uiverse.io (Checkbox CSS)</p>
+                        <h3>Icons</h3>
+                        <p>Google Material Symbols</p>
+                        <p>favicon.io</p>
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button">Close</button>
+                </footer>
+            </div>
+        </div>
+        
+        <script src="todo.js" ></script>
+    </body>
+</html>

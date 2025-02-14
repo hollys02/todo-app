@@ -1,0 +1,77 @@
+:root {
+    --bulma-link-h: 171;
+    --bulma-link-s: 100%;
+    --bulma-link-l: 41%;
+}
+
+.invisible {
+    display: none !important;
+}
+
+.listTitle {
+    font-size: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.listTitleInput {
+    text-align: center;
+}
+
+.listItemInput {
+    width: 30%;
+    max-width: 75%;
+}
+
+.listItemInput:focus {
+    box-shadow: 0 0 5px 2px var(--bulma-primary);
+    border-color: var(--bulma-primary);
+}
+
+.addItemButton {
+    margin: 20px;
+    padding: 10px 15px;
+    font-size: larger;
+    border: 0;
+    border-radius: 10px;
+}
+
+.btnItemDelete {
+    border-color: grey;
+    border-width: 2px;
+}
+
+.btnItemDelete:hover {
+    background-color: #ff000077;
+    animation: btnItemDeleteFade 1.5s infinite;
+}
+
+@keyframes btnItemDeleteFade {
+    0% {
+        border-color: rgb(255, 0, 0);
+        background-color: rgb(50, 0, 0);
+    }
+    40% {
+        border-color: rgb(150, 150, 150);
+        background-color: rgb(200, 0, 0);
+    }
+    60% {
+        border-color: rgb(150, 150, 150);
+        background-color: rgb(200, 0, 0);
+    }
+    100% {
+        border-color: rgb(255, 0, 0);
+        background-color: rgb(50, 0, 0);
+    }
+}
+
+.btnNewItem {
+    width: 125px;
+}
+
+.btnListDelete {
+    width: 125px;
+    transition: 
+        width 0.5s;
+}
